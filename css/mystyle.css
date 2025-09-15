@@ -1,0 +1,252 @@
+            h1{
+                color: rgb(184, 126, 0);
+            }
+           /* القاعدة العامة */
+        /* جعل الصور تتناسب مع أي شاشة */
+        
+            .btn {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+        .header-carousel {
+    direction: ltr;
+}
+.navbar-brand {
+    margin-right: 0 !important; /* إلغاء المسافة من اليمين */
+    padding-right: 0 !important; /* إلغاء الحشو من اليمين */
+}
+.footer-section {
+  background: #111;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #FFD700;
+  padding-right: 5px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.social-icon.facebook:hover {
+  background: #3b5998;
+}
+
+.social-icon.instagram:hover {
+  background: #e4405f;
+}
+
+.social-icon.whatsapp:hover {
+  background: #25d366;
+}
+
+        
+        /* أنماط قسم الخدمات الجديدة */
+/* تصميم البطاقة */
+.service- {
+    background: #fff;
+    border: 2px solid #e0e0e0; /* الحد */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* صورة البطاقة */
+.service- .service-img img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #e0e0e0;
+    transition: transform 0.3s ease;
+}
+
+/* محتوى البطاقة */
+.service- .service-content {
+    padding: 20px;
+    flex: 1;
+}
+
+/* أيقونة الخدمة */
+.service- .service-icon {
+    font-size: 40px;
+    color: #e3af06;
+    margin-bottom: 15px;
+    display: flex;
+justify-content: center;
+
+}
+
+/* تأثير عند المرور */
+.service-:hover {
+    border-color: #e3af06;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.service-:hover .service-img img {
+    transform: scale(1.05);
+}
+
+/* العناوين */
+.service- h4 {
+    font-weight: bold;
+text-align: center;
+    color: #df8508;
+}
+
+/* النص */
+.service- p {
+    color: #666;
+    font-size: 15px;
+}
+
+/* الزر */
+.service- a.btn {
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.service- a.btn:hover {
+    background-color: #e3af06;
+    border-color: #fac208;
+}
+
+        
+        .partners-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .partner-logo {
+            max-width: 150px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        .swiper {
+  width: 100%;
+  padding-bottom: 50px;
+}
+/* خلفية منبثقة */
+.video-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.video-popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  animation: scaleUp 0.4s ease;
+}
+
+.video-popup-content iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  border: 4px solid #FFD700;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 35px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes scaleUp {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
+}
+.video-card {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+  font-style: italic;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FFD700; /* سهم ذهبي */
+}
+
+.swiper-pagination-bullet {
+  background: #FFD700;
+}
+
+
+

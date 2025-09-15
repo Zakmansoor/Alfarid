@@ -1,0 +1,813 @@
+ا
+---
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Stocker - Stock Market Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/mystyle.css" rel="stylesheet">
+    </head>
+  <style>
+        :root {
+            --primary-color: #a85e039a;
+            --secondary-color: #ffc107;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --card-hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            padding-top: 0;
+            line-height: 1.7;
+        }
+        
+        .services-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f8f9fa, #fff);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h1 {
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .section-title h4 {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* تصميم البطاقات المطور */
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: var(--card-shadow);
+            height: 100%;
+            position: relative;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .service-card-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-card-header img {
+            transform: scale(1.1);
+        }
+        
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(24, 76, 156, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover .service-card-overlay {
+            opacity: 1;
+        }
+        
+        .service-card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-card-icon {
+            transform: translateY(0);
+        }
+        
+        .service-card-body {
+            padding: 25px;
+            text-align: right;
+        }
+        
+        .service-card-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-card-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .service-card-text {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+        
+        .service-card-features {
+            margin-bottom: 25px;
+        }
+        
+        .service-card-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .service-card-feature i {
+            color: var(--secondary-color);
+            margin-left: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .service-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .service-card-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            background: rgba(24, 76, 156, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        .service-card-cta {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card-cta:hover {
+            color: var(--secondary-color);
+        }
+        
+        .service-card-cta i {
+            margin-right: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card-cta:hover i {
+            transform: translateX(-5px);
+        }
+        
+        /* تأثيرات خاصة للبطاقات */
+        .service-card:nth-child(2n) .service-card-icon {
+            background: #28a745;
+        }
+        
+        .service-card:nth-child(3n) .service-card-icon {
+            background: #dc3545;
+        }
+        
+        .service-card:nth-child(4n) .service-card-icon {
+            background: #6f42c1;
+        }
+        
+        /* التنسيق العام */
+        .service-category {
+            margin-bottom: 50px;
+        }
+        .service-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .category-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 100px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .service-card {
+                margin-bottom: 20px;
+            }
+            
+            .section-title h1 {
+                font-size: 2rem;
+            }
+            
+            .service-card-body {
+                padding: 20px;
+            }
+            
+            .service-card-footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+      
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+           <nav class="navbar navbar-expand-lg navbar-light">
+<div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo1_7.png" alt="شعار وكالة الفريد" >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">الرئيسية</a>
+                    <a href="about.html" class="nav-item nav-link">عن الوكالة</a>
+                    <a href="service.html" class="nav-item nav-link active">خدماتنا</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">صفحات</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html" class="dropdown-item">مميزاتنا</a>
+                            <a href="jobs.html" class="dropdown-item"> معلومات الوظائف</a>
+                            <a href="testimonial.html" class="dropdown-item">آراء العملاء</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">اتصل بنا</a>
+                </div>
+                <a href="#" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">اطلب خدمة</a>
+            </div>
+        </nav>
+
+            <!-- Header Start -->
+          <div class="container-fluid bg-breadcrumb" dir="rtl">
+  <div class="container text-center py-5" style="max-width: 900px;">
+    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">خدماتنا</h4>
+    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+      <li class="breadcrumb-item"><a href="index.html">القائمة الرئيسية</a></li>
+      <li class="breadcrumb-item active text-primary" aria-current="page">الخدمات</li>
+    </ol>
+  </div>
+</div>
+    
+                </div>
+        
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Services Start -->
+         <div class="container-fluid services-section">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary">خدماتنا</h4>
+                <h1 class="display-5 mb-4">نقدم لكم أفضل الخدمات والعروض</h1>
+                <p class="mb-0">في وكالة الفريد، نقدم مجموعة متكاملة من الخدمات التي تلبي احتياجاتكم في مجالات التأشيرات، التوظيف، والمعاملات الحكومية. نضمن لكم جودة عالية وخدمة سريعة بأسعار تنافسية.</p>
+            </div>
+            
+            <!-- خدمات التأشيرات والكفالات -->
+            <div class="service-category">
+                <h3 class="category-title">خدمات التأشيرات والكفالات</h3>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="التأشيرات الحرة">
+                                <div class="service-card-overlay">
+                                    <div class="service-card-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-card-body">
+                                <h3 class="service-card-title">التأشيرات الحرة</h3>
+                                <p class="service-card-text">بيع التأشيرات الحرة بنظام التوظيف لجميع المهن بمختلف التخصصات والمستويات.</p>
+                                <div class="service-card-features">
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>لجميع المهن والتخصصات</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>إجراءات سريعة ومضمونة</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>أسعار تنافسية</span>
+                                    </div>
+                                </div>
+                                <div class="service-card-footer">
+                                    <div class="service-card-price">تبدأ الأسعار من 500$</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="تأشيرات المؤسسات">
+                                <div class="service-card-overlay">
+                                    <div class="service-card-icon">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-card-body">
+                                <h3 class="service-card-title">تأشيرات المؤسسات</h3>
+                                <p class="service-card-text">بيع تأشيرات المؤسسات الكبيرة والصغيرة بفترات إقامة مختلفة تناسب احتياجاتكم.</p>
+                                <div class="service-card-features">
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>لمؤسسات كبيرة وصغيرة</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>إقامة 3 أشهر أو سنة</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>أسعار خاصة للكميات</span>
+                                    </div>
+                                </div>
+                                <div class="service-card-footer">
+                                    <div class="service-card-price">تبدأ الأسعار من 700$</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="عمالة منزلية">
+                                <div class="service-card-overlay">
+                                    <div class="service-card-icon">
+                                        <i class="fas fa-house-user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-card-body">
+                                <h3 class="service-card-title">عمالة منزلية</h3>
+                                <p class="service-card-text">تأشيرات عمالة منزلية (سائق خاص / عامل منزلي) بأسعار مناسبة وضمان حقوق الطرفين.</p>
+                                <div class="service-card-features">
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>سائقين وعاملين منزليين</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>ضمان حقوق الطرفين</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>متابعة مستمرة</span>
+                                    </div>
+                                </div>
+                                <div class="service-card-footer">
+                                    <div class="service-card-price">تبدأ الأسعار من 900$</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- خدمات إضافية -->
+            <div class="service-category">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <img src="https://alhajer-alaswad.com/assets/uploads/media-uploader/innerimage836516090101680062537.png" alt="الحج والعمرة">
+                                <div class="service-card-overlay">
+                                    <div class="service-card-icon">
+                                        <i class="fas fa-kaaba"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-card-body">
+                                <h3 class="service-card-title">الحج والعمرة</h3>
+                                <p class="service-card-text">تأشيرات الحج والعمرة ببرامج متنوعة تناسب جميع الاحتياجات والميزانيات.</p>
+                                <div class="service-card-features">
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>برامج متنوعة</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>أسعار تنافسية</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>رعاية متكاملة</span>
+                                    </div>
+                                </div>
+                                <div class="service-card-footer">
+                                    <div class="service-card-price">تبدأ الأسعار من 1200$</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="التوظيف">
+                                <div class="service-card-overlay">
+                                    <div class="service-card-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-card-body">
+                                <h3 class="service-card-title">خدمات التوظيف</h3>
+                                <p class="service-card-text">توظيف حاملي الإقامة وتوفير فرص عمل للمقيمين في مختلف المجالات والتخصصات.</p>
+                                <div class="service-card-features">
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>جميع التخصصات</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>فرص محلية ودولية</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>متابعة حتى التعيين</span>
+                                    </div>
+                                </div>
+                                <div class="service-card-footer">
+                                    <div class="service-card-price">تبدأ الأسعار من 300$</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="الجوازات">
+                                <div class="service-card-overlay">
+                                    <div class="service-card-icon">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-card-body">
+                                <h3 class="service-card-title">الجوازات والمعاملات</h3>
+                                <p class="service-card-text">إصدار وتجديد الجوازات عن بُعد وإنجاز المعاملات الرسمية بسرعة واحترافية.</p>
+                                <div class="service-card-features">
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>خدمة عن بُعد</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>إنجاز سريع</span>
+                                    </div>
+                                    <div class="service-card-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>أسعار مناسبة</span>
+                                    </div>
+                                </div>
+                                <div class="service-card-footer">
+                                    <div class="service-card-price">تبدأ الأسعار من 200$</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            <!-- 7. تأشيرات الزيارات -->
+        
+    </div>
+</div>
+
+<!-- القسم الثاني: خدمات التوظيف -->
+<div class="service-category">
+    <h3 class="category-title"> </h3>
+    <div class="row">
+
+        <!-- 9. توظيف حاملي الإقامة -->
+        <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="service-card-header">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="توظيف حاملي الإقامة">
+                    <div class="service-card-overlay">
+                        <div class="service-card-icon"><i class="fas fa-user-tie"></i></div>
+                    </div>
+                </div>
+                <div class="service-card-body">
+                    <h3 class="service-card-title">توظيف حاملي الإقامة</h3>
+                    <p class="service-card-text">توظيف حاملي الإقامة من الباحثين عن عمل في مختلف القطاعات.</p>
+                    <div class="service-card-features">
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> فرص متنوعة</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> شركات موثوقة</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> دعم كامل</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="service-card-header">
+                    <img src="https://alhajer-alaswad.com/assets/uploads/media-uploader/3-731680064481.jpg" alt="تأشيرات الزيارات">
+                    <div class="service-card-overlay">
+                        <div class="service-card-icon"><i class="fas fa-users"></i></div>
+                    </div>
+                </div>
+                <div class="service-card-body">
+                    <h3 class="service-card-title">تأشيرات الزيارات</h3>
+                    <p class="service-card-text">تأشيرات الزيارات العائلية والشخصية مع تسهيلات كاملة.</p>
+                    <div class="service-card-features">
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> زيارات عائلية وشخصية</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> إجراءات سريعة</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> دعم مستمر</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. إتمام معاملات التأشيرات -->
+        <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="service-card-header">
+                    <img src="https://alhajer-alaswad.com/assets/uploads/media-uploader/man-filling-out-form-168183241680062356.jpg" alt="إتمام معاملات التأشيرات">
+                    <div class="service-card-overlay">
+                        <div class="service-card-icon"><i class="fas fa-file-signature"></i></div>
+                    </div>
+                </div>
+                <div class="service-card-body">
+                    <h3 class="service-card-title">إتمام معاملات التأشيرات</h3>
+                    <p class="service-card-text">إتمام جميع معاملات التأشيرات (عمل، زيارة، وغيرها) بسرعة ودقة.</p>
+                    <div class="service-card-features">
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> معاملات عمل وزيارة</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> متابعة حتى الإنجاز</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> أسعار مناسبة</div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- 10. توفير فرص عمل للمقيمين -->
+       
+    </div>
+</div>
+
+<!-- القسم الثالث: خدمات الجوازات والمعاملات -->
+<div class="service-category">
+    <h3 class="category-title">خدمات الجوازات والمعاملات</h3>
+    <div class="row">
+
+        <!-- 11. إصدار وتجديد الجوازات -->
+        <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="service-card-header">
+                    <img src="https://www.muhtwaplus.com/wp-content/uploads/2025/08/%D8%AE%D8%B7%D9%88%D8%A7%D8%AA-%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1-%D8%AC%D9%88%D8%A7%D8%B2-%D8%A7%D9%84%D8%B3%D9%81%D8%B1-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A.jpeg" alt="إصدار وتجديد الجوازات">
+                    <div class="service-card-overlay">
+                        <div class="service-card-icon"><i class="fas fa-passport"></i></div>
+                    </div>
+                </div>
+                <div class="service-card-body">
+                    <h3 class="service-card-title">إصدار وتجديد الجوازات</h3>
+                    <p class="service-card-text">إصدار وتجديد الجوازات عن بُعد بسهولة وسرعة.</p>
+                    <div class="service-card-features">
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> خدمة عن بُعد</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> إجراءات سريعة</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> متابعة حتى التسليم</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. إنجاز المعاملات الرسمية -->
+        <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="service-card-header">
+                    <img src="https://alhajer-alaswad.com/assets/uploads/media-uploader/istockphoto-954578184-612x6121680094343.jpg" alt="إنجاز المعاملات الرسمية">
+                    <div class="service-card-overlay">
+                        <div class="service-card-icon"><i class="fas fa-file-contract"></i></div>
+                    </div>
+                </div>
+                <div class="service-card-body">
+                    <h3 class="service-card-title">إنجاز المعاملات الرسمية</h3>
+                    <p class="service-card-text">إنجاز جميع المعاملات الرسمية بسرعة ودقة.</p>
+                    <div class="service-card-features">
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> معاملات حكومية</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> دقة عالية</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> أسعار مناسبة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. خدمة البصمة -->
+        <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="service-card-header">
+                    <img src="https://tlcoo.com/wp-content/uploads/2021/02/960x0.jpg" alt="خدمة البصمة">
+                    <div class="service-card-overlay">
+                        <div class="service-card-icon"><i class="fas fa-fingerprint"></i></div>
+                    </div>
+                </div>
+                <div class="service-card-body">
+                    <h3 class="service-card-title">خدمة البصمة</h3>
+                    <p class="service-card-text">توفير خدمة البصمة للمقيمين والمواطنين بسرعة واحترافية.</p>
+                    <div class="service-card-features">
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> للمقيمين والمواطنين</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> إجراءات سريعة</div>
+                        <div class="service-card-feature"><i class="fas fa-check-circle"></i> دعم مستمر</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+      
+    
+    <footer class="footer-section text-white pt-5 pb-3" dir="rtl">
+  <div class="container">
+    <div class="row">
+
+      <!-- روابط سريعة -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h5 class="fw-bold mb-3">روابط سريعة</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الوكالة</a></li>
+          <li><a href="service.html">خدماتنا</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+
+      <!-- تواصل معنا -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h5 class="fw-bold mb-3">تواصل معنا</h5>
+        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> صنعاء - اليمن</p>
+        <p class="mb-2"><i class="fas fa-phone me-2"></i> +967 777 000 000</p>
+        <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@alfareed.com</p>
+      </div>
+
+      <!-- أيقونات التواصل -->
+      <div class="col-md-12 col-lg-4 mb-4 text-center">
+        <h5 class="fw-bold mb-3">تابعنا</h5>
+        <div class="social-icons">
+          <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/967777000000" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="bg-light">
+    <div class="text-center small">
+      جميع الحقوق محفوظة © وكالة الفريد 2025
+    </div>
+  </div>
+</footer>
+    <!-- Services End -->
+
+    <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        <script>
+            $('.header-carousel').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                smartSpeed: 800,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 1 },
+                    992: { items: 1 }
+                }
+            });
+        </script>
+        <!-- JavaScript Libraries -->
+         <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+</body>
+
+</html>

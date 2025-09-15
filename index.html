@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+    <head>
+        <meta charset="utf-8">
+        <title>وكالة الفريد</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Google Web Fonts -->
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+                <link href="css/mystyle.css" rel="stylesheet">
+
+       <style>
+       .header-carousel-item {
+    position: relative;
+}
+
+.header-carousel-item img {
+    height: 100vh; /* يجعل الصورة تملأ الشاشة بالكامل */
+    object-fit: cover; /* يحافظ على تناسب الصورة */
+}
+
+.header-carousel-item .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    padding: 0 15px;
+}
+    
+       </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+              <!-- Navbar & Hero Start -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+<div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo1_7.png" alt="شعار وكالة الفريد" >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">الرئيسية</a>
+                    <a href="about.html" class="nav-item nav-link">عن الوكالة</a>
+                    <a href="service.html" class="nav-item nav-link">خدماتنا</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">صفحات</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html" class="dropdown-item">مميزاتنا</a>
+                            <a href="jobs.html" class="dropdown-item"> معلومات الوظائف</a>
+                            <a href="testimonial.html" class="dropdown-item">آراء العملاء</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">اتصل بنا</a>
+                </div>
+                <a href="#" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">اطلب خدمة</a>
+            </div>
+        </nav>
+
+
+        <!-- سلايدر الهيدر -->
+<div class="header-carousel owl-carousel" dir="ltr">
+    <!-- شريحة 1 -->
+    <div class="header-carousel-item">
+        <img src="img/backgraound.png" class="img-fluid w-100" alt="صورة التأشيرات">
+        <div class="carousel-caption">
+            <div class="container">
+                <div class="text-center">
+                    <h4 class="text-primary fw-bold mb-4">مرحباً بكم في</h4>
+                    <h1 class="display-4 mb-4">وكالة الفريد للتوظيف والخدمات</h1>
+                    <p class="mb-5 fs-5">نقدم لكم حلولاً متكاملة لجميع احتياجاتكم...</p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2 video-btn" 
+                           data-video="https://www.youtube.com/embed/jNQXAC9IVRw">
+                           <i class="fas fa-play-circle me-2"></i> شاهد الفيديو
+                        </a>
+                        <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="#">تعرف أكثر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- شريحة 2 -->
+    <div class="header-carousel-item">
+        <img src="img/backgraound1.png" class="img-fluid w-100" alt="صورة التوظيف">
+        <div class="carousel-caption">
+            <div class="container">
+                <div class="text-center">
+                    <h4 class="text-primary fw-bold mb-4">خدمات التوظيف</h4>
+                    <h1 class="display-4 mb-4">توظيف الأيدي العاملة المحترفة</h1>
+                    <p class="mb-5 fs-5">نوفر لكم أفضل الكفاءات من العمالة المدربة والمحترفة...</p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2 video-btn" 
+                           data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                           <i class="fas fa-play-circle me-2"></i> شاهد الفيديو
+                        </a>
+                        <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="#">تعرف أكثر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- شريحة 3 -->
+    <div class="header-carousel-item">
+        <img src="img/backgraound2.png" class="img-fluid w-100" alt="صورة الحج والعمرة">
+        <div class="carousel-caption">
+            <div class="container">
+                <div class="text-center">
+                    <h4 class="text-primary fw-bold mb-4">خدمات الحج والعمرة</h4>
+                    <h1 class="display-4 mb-4">رحلات مميزة وخدمات متكاملة</h1>
+                    <p class="mb-5 fs-5">نقدم برامج حج وعمرة مميزة مع أفضل الفنادق والنقل المريح...</p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2 video-btn" 
+                           data-video="https://www.youtube.com/embed/ScMzIvxBSi4">
+                           <i class="fas fa-play-circle me-2"></i> شاهد الفيديو
+                        </a>
+                        <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="#">تعرف أكثر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة الفيديو المنبثقة (خارج السلايدر) -->
+<div class="video-popup" id="videoPopup">
+  <div class="video-popup-content">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <iframe id="popupVideo" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+        <!-- Carousel End -->
+    <!-- Navbar & Hero End -->
+
+
+        <!-- Abvout Start -->
+       
+        <!-- About End -->
+       <!-- الخدمات المقدمة Start -->
+   <div class="container-fluid services-section py-5" dir="rtl">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h1 class="display-5 mb-4">من خدماتنا</h1>
+            <p class="mb-0">في وكالة الفريد للتوظيف والخدمات، نقدم باقة متكاملة من الحلول التي تلبي احتياجاتكم في مجالات السفر، التوظيف، الحج والعمرة، والخدمات المساندة، بأعلى معايير الجودة والاحترافية.</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- خدمة سفريات وسياحة -->
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="سفريات وسياحة">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h4 class="mb-3">السفريات والسياحة</h4>
+                        <p class="mb-4">نوفر لكم أفضل العروض السياحية ورحلات السفر الداخلية والخارجية، مع تنظيم كامل لبرامجكم السياحية لضمان تجربة سفر مريحة وآمنة.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- خدمة الحج والعمرة -->
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="service-">
+                    <div class="service-img">
+                        <img src="https://alhajer-alaswad.com/assets/uploads/media-uploader/omra121679769219.png" alt="الحج والعمرة">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-kaaba"></i>
+                        </div>
+                        <h4 class="mb-3">الحج والعمرة</h4>
+                        <p class="mb-4">تنظيم حملات حج وعمرة مميزة تشمل الإقامة المريحة، النقل الفاخر، وخدمات ميدانية بإشراف فريق متخصص لضمان راحة الحجاج والمعتمرين.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- خدمة الأيدي العاملة -->
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="service-">
+                    <div class="service-img">
+                        <img src="img/workers.png" alt="الأيدي العاملة">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="mb-3">توفير الأيدي العاملة</h4>
+                        <p class="mb-4">استقدام وتوظيف الكفاءات المهنية في مختلف المجالات، مع إنهاء كافة إجراءات الاستقدام والتأشيرات بسرعة وكفاءة عالية.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- خدمات أخرى -->
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="service-">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="خدمات أخرى">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="mb-3">خدمات إضافية</h4>
+                        <p class="mb-4">تقديم حلول متكاملة تشمل تخليص المعاملات، بيع التأشيرات، النقل البري، وخدمات مخصصة تلبي احتياجات عملائنا بدقة واحترافية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Services Start -->
+     <div class="container-fluid about py-5" dir="rtl" style="text-align: right;">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
+                <div>
+                    <h4 class="text-primary">عن وكالتنا</h4>
+                    <h1 class="display-5 mb-4">وكالة الفريد رائدة في مجال التوظيف والخدمات</h1>
+                    <p class="mb-4">
+                        تأسست وكالة الفريد عام 2005، وتخصصت في تقديم خدمات متكاملة تشمل بيع التأشيرات، 
+                        توظيف الأيدي العاملة، تنظيم رحلات الحج والعمرة، والنقل البري. 
+                        نحن نفتخر بسمعتنا الطيبة وثقة عملائنا الكرام.
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                            <div class="d-flex">
+                                <div><i class="fas fa-certificate fa-3x text-primary"></i></div>
+                                <div class="me-4">
+                                    <h4>خدمات معتمدة</h4>
+                                    <p>جميع خدماتنا معتمدة من الجهات الرسمية</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                            <div class="d-flex">
+                                <div><i class="fas fa-users fa-3x text-primary"></i></div>
+                                <div class="me-4">
+                                    <h4>فريق محترف</h4>
+                                    <p>فريق عمل متخصص وذو خبرة عالية</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">اكتشف المزيد</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex">
+                                <i class="fas fa-phone-alt fa-2x text-primary ms-4"></i>
+                                <div>
+                                    <h4>اتصل بنا</h4>
+                                    <p class="mb-0 fs-5" style="letter-spacing: 1px;">96775266242+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
+                <div class="bg-primary rounded position-relative overflow-hidden">
+                    <img src="img/background2.png" class="img-fluid rounded w-100" alt="صورة عن الوكالة">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Services End -->
+
+        <!-- Features Start -->
+        <div class="container-fluid feature pb-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">مميزاتنا</h4>
+                <h1 class="display-5 mb-4">لماذا تختار وكالة الفريد؟</h1>
+                <p class="mb-0">نحن نتميز بتقديم خدمات عالية الجودة تلبي توقعات عملائنا الكرام، مع الالتزام بالمعايير المهنية والمواعيد المتفق عليها.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="feature-item p-4">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fas fa-clock fa-4x text-primary"></i>
+                        </div>
+                        <h4>تسليم في الوقت المحدد</h4>
+                        <p class="mb-4">نلتزم بمواعيد التسليم المتفق عليها دون تأخير
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">تعرف أكثر</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="feature-item p-4">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fas fa-headset fa-4x text-primary"></i>
+                        </div>
+                        <h4>دعم فني متواصل</h4>
+                        <p class="mb-4">فريق دعم فني متاح على مدار الساعة لخدمتكم
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">تعرف أكثر</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="feature-item p-4">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fas fa-user-tie fa-4x text-primary"></i>
+                        </div>
+                        <h4>فريق محترف</h4>
+                        <p class="mb-4">فريق عمل ذو خبرة وكفاءة عالية في مختلف المجالات
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">تعرف أكثر</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="feature-item p-4">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fas fa-hand-holding-usd fa-4x text-primary"></i>
+                        </div>
+                        <h4>أسعار تنافسية</h4>
+                        <p class="mb-4">نقدم أسعاراً تنافسية مع الحفاظ على جودة الخدمة
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">تعرف أكثر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Features End -->
+
+ 
+        
+<div class="container-fluid partners-section py-5" dir="rtl">
+  <div class="container py-5">
+    <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+      <h4 class="text-primary">آراء العملاء</h4>
+      <h1 class="display-5 mb-4">ماذا يقول عملاؤنا عنا</h1>
+      <p class="mb-0">نسعد دائمًا بسماع تجارب عملائنا ونفخر بثقتهم بخدماتنا.</p>
+    </div>
+
+    <!-- شريط الفيديوهات -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- رأي عميل 1 -->
+        <div class="swiper-slide">
+          <div class="card video-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <p class="card-text">"خدمة رائعة وسرعة في الإنجاز، أنصح الجميع بالتعامل معهم."</p>
+              <small class="text-muted">— أحمد علي</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- رأي عميل 2 -->
+        <div class="swiper-slide">
+          <div class="card video-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <p class="card-text">"تجربة ممتازة وفريق عمل محترف."</p>
+              <small class="text-muted">— سارة محمد</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- رأي عميل 3 -->
+        <div class="swiper-slide">
+          <div class="card video-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <p class="card-text">"التزام بالمواعيد وجودة في الخدمة."</p>
+              <small class="text-muted">— خالد يوسف</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- رأي عميل 4 -->
+        <div class="swiper-slide">
+          <div class="card video-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body text-center">
+              <p class="card-text">"أفضل وكالة تعاملت معها على الإطلاق."</p>
+              <small class="text-muted">— منى عبد الله</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- النقاط -->
+      <div class="swiper-pagination"></div>
+
+      <!-- أسهم التنقل -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- شركاؤنا End -->
+        <!-- الخدمات المقدمة End -->
+
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+      
+    <footer class="footer-section text-white pt-5 pb-3" dir="rtl">
+  <div class="container">
+    <div class="row">
+
+      <!-- روابط سريعة -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h5 class="fw-bold mb-3">روابط سريعة</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الوكالة</a></li>
+          <li><a href="service.html">خدماتنا</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+
+      <!-- تواصل معنا -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h5 class="fw-bold mb-3">تواصل معنا</h5>
+        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> صنعاء - اليمن</p>
+        <p class="mb-2"><i class="fas fa-phone me-2"></i> +967 777 000 000</p>
+        <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@alfareed.com</p>
+      </div>
+
+      <!-- أيقونات التواصل -->
+      <div class="col-md-12 col-lg-4 mb-4 text-center">
+        <h5 class="fw-bold mb-3">تابعنا</h5>
+        <div class="social-icons">
+          <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/967777000000" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="bg-light">
+    <div class="text-center small">
+      جميع الحقوق محفوظة © وكالة الفريد 2025
+    </div>
+  </div>
+</footer>
+
+        <!-- Copyright End -->
+
+
+    
+        <script>
+            $('.header-carousel').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                smartSpeed: 800,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 1 },
+                    992: { items: 1 }
+                }
+            });
+        </script>
+        <script>
+document.querySelectorAll('.btn-light').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    let videoUrl = "https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=1";
+    document.getElementById('popupVideo').src = videoUrl;
+    document.getElementById('videoPopup').style.display = 'flex';
+  });
+});
+
+document.getElementById('closePopup').addEventListener('click', function() {
+  document.getElementById('videoPopup').style.display = 'none';
+  document.getElementById('popupVideo').src = "";
+});
+
+window.addEventListener('click', function(e) {
+  if (e.target === document.getElementById('videoPopup')) {
+    document.getElementById('videoPopup').style.display = 'none';
+    document.getElementById('popupVideo').src = "";
+  }
+});
+</script>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <script src="js/myjs.js">
+           
+        </script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+
+    </body>
+
+</html>

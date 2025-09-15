@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Stocker - Stock Market Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/mystyle.css" rel="stylesheet">
+    </head>
+ <style>
+        :root {
+            --primary-color: #fd7e14;
+            --secondary-color: #e74c3c;
+            --accent-color: #fd7e14;
+            --light-bg: #f8f9fa;
+            --dark-bg: #e36b08;
+            --card-hover: #f0f4f8;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-bg) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+                        color: white;
+
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .lead {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .filter-buttons {
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            margin: 0.3rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background-color: var(--card-hover);
+        }
+        
+        .card-header {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 1rem 1.5rem;
+        }
+        
+        .card-header h5 {
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin: 1rem 0;
+        }
+        
+        .job-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .job-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .job-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .job-list i {
+            color: var(--secondary-color);
+            margin-left: 0.5rem;
+        }
+        
+        .salary {
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-right: 4px solid var(--accent-color);
+        }
+        
+        .notes {
+            background-color: rgba(231, 76, 60, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            border-right: 4px solid var(--secondary-color);
+        }
+        
+     
+        
+        /* Animation for cards */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-card {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 0;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .filter-btn {
+                margin: 0.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>    
+<body>
+    <!-- Spinner -->
+   
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+
+        
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+      
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo1_7.png" alt="شعار وكالة الفريد" >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">الرئيسية</a>
+                    <a href="about.html" class="nav-item nav-link ">عن الوكالة</a>
+                    <a href="service.html" class="nav-item nav-link ">خدماتنا</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">صفحات</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html" class="dropdown-item">مميزاتنا</a>
+                            <a href="jobs.html" class="dropdown-item"> معلومات الوظائف</a>
+                            <a href="testimonial.html" class="dropdown-item">آراء العملاء</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link ">اتصل بنا</a>
+                </div>
+                <a href="#" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">اطلب خدمة</a>
+            </div>
+        </nav>
+            <!-- Header Start -->
+            <div class="container-fluid bg-breadcrumb">
+                <div class="container text-center py-5" style="max-width: 900px;">
+                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">معلومات الوظائف</h4>
+                    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                        <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                        <li class="breadcrumb-item"><a href="#">صفحات</a></li>
+                        <li class="breadcrumb-item active text-primary">الوظائف </li>
+                    </ol>    
+                </div>
+            </div>
+            <!-- Header End -->
+        </div>
+    <!-- Navbar & Hero End -->
+
+  <div class="container">
+        <!-- Header Section -->
+          <div class="section-title text-center">
+                <h4 class="text-primary">وظائفنا</h4>
+            <h1><i class="fas fa-money-bill-wave me-2"></i>رواتب العمالة اليمنية في السعودية</h1>
+            <p class="lead">دليل شامل للرواتب حسب التخصصات والمهن المختلفة</p>
+            </div>
+        
+        
+        <!-- Filter Buttons -->
+        <div class="row filter-buttons justify-content-center">
+            <div class="col-12 text-center">
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all">جميع التصنيفات</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="workers">العمال العاديون</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="drivers">السائقون</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="cooks">الطباخون</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="admin">الإداريون</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="crafts">الحرفيون</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="finance">الماليون</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="sales">الباعة</button>
+            </div>
+        </div>
+        
+        <!-- Cards Section -->
+        <div class="row" id="salary-cards">
+            <!-- العمال العاديون -->
+            <div class="col-lg-4 col-md-6 mb-4 category-card" data-category="workers">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-hammer me-2"></i>العمال العاديون</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="fas fa-hammer category-icon"></i>
+                        </div>
+                        <ul class="job-list">
+                            <li><i class="fas fa-arrow-left"></i> عمال النظافة</li>
+                            <li><i class="fas fa-arrow-left"></i> عمال المطاعم</li>
+                            <li><i class="fas fa-arrow-left"></i> عمال المغاسل</li>
+                            <li><i class="fas fa-arrow-left"></i> عمال المحلات</li>
+                            <li><i class="fas fa-arrow-left"></i> عمال البناء المساعدين</li>
+                            <li><i class="fas fa-arrow-left"></i> عمال التحميل والتفريغ</li>
+                        </ul>
+                        <div class="salary">
+                            <i class="fas fa-money-bill-wave me-2"></i> الرواتب: 1500 - 2000 ريال سعودي
+                        </div>
+                        <div class="notes">
+                            <i class="fas fa-info-circle me-2"></i> ملاحظة: إذا كان العامل جيدًا وأثبت نفسه خلال فترة التجربة، يتم نقل الكفالة إليه.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- السائقون -->
+            <div class="col-lg-4 col-md-6 mb-4 category-card" data-category="drivers">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-car me-2"></i>السائقون</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="fas fa-car category-icon"></i>
+                        </div>
+                        <ul class="job-list">
+                            <li><i class="fas fa-arrow-left"></i> سائقين التوصيل (طلبات مطاعم)</li>
+                            <li><i class="fas fa-arrow-left"></i> سائقين النقل الخفيف</li>
+                            <li><i class="fas fa-arrow-left"></i> سائقين المعدات الثقيلة</li>
+                            <li><i class="fas fa-arrow-left"></i> سائقين المعدات الخفيفة</li>
+                            <li><i class="fas fa-arrow-left"></i> سائقين التاكسي</li>
+                            <li><i class="fas fa-arrow-left"></i> سائقين الخاصة</li>
+                        </ul>
+                        <div class="salary">
+                            <i class="fas fa-money-bill-wave me-2"></i> الرواتب: 2000 - 2800 ريال سعودي
+                        </div>
+                        <div class="notes">
+                            <i class="fas fa-info-circle me-2"></i> مع وجود إضافات حسب طبيعة العمل وساعات العمل.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- وظائف الطهي والمطاعم -->
+            <div class="col-lg-4 col-md-6 mb-4 category-card" data-category="cooks">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-utensils me-2"></i>وظائف الطهي والمطاعم</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="fas fa-utensils category-icon"></i>
+                        </div>
+                        <ul class="job-list">
+                            <li><i class="fas fa-arrow-left"></i> طباخي المندي</li>
+                            <li><i class="fas fa-arrow-left"></i> طباخي المضبي</li>
+                            <li><i class="fas fa-arrow-left"></i> طباخي البروستد</li>
+                            <li><i class="fas fa-arrow-left"></i> الخبازين</li>
+                            <li><i class="fas fa-arrow-left"></i> مساعدي الطهاة</li>
+                            <li><i class="fas fa-arrow-left"></i> العاملين في تقديم الطعام</li>
+                        </ul>
+                        <div class="salary">
+                            <i class="fas fa-money-bill-wave me-2"></i> الرواتب: 2500 - 3000 ريال سعودي
+                        </div>
+                        <div class="notes">
+                            <i class="fas fa-info-circle me-2"></i> ملاحظة: الأكل والشرب والسكن على المطعم في معظم الحالات.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- الوظائف الإدارية والكتابية -->
+            <div class="col-lg-4 col-md-6 mb-4 category-card" data-category="admin">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-briefcase me-2"></i>الوظائف الإدارية والكتابية</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="fas fa-briefcase category-icon"></i>
+                        </div>
+                        <ul class="job-list">
+                            <li><i class="fas fa-arrow-left"></i> أمناء الصندوق (الكاشير)</li>
+                            <li><i class="fas fa-arrow-left"></i> مدخلي البيانات</li>
+                            <li><i class="fas fa-arrow-left"></i> موظفي الاستقبال</li>
+                            <li><i class="fas fa-arrow-left"></i> المساعدين الإداريين</li>
+                            <li><i class="fas fa-arrow-left"></i> السكرتارية</li>
+                        </ul>
+                        <div class="salary">
+                            <i class="fas fa-money-bill-wave me-2"></i> الرواتب: 2000 - 2500 ريال سعودي
+                        </div>
+                        <div class="notes">
+                            <i class="fas fa-info-circle me-2"></i> تزداد الرواتب مع الخبرة والمهارات الإضافية مثل اللغة الإنجليزية.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- الحرفيون والفنيون -->
+            <div class="col-lg-4 col-md-6 mb-4 category-card" data-category="crafts">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-tools me-2"></i>الحرفيون والفنيون</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="fas fa-tools category-icon"></i>
+                        </div>
+                        <ul class="job-list">
+                            <li><i class="fas fa-arrow-left"></i> النجارين</li>
+                            <li><i class="fas fa-arrow-left"></i> الحدادين</li>
+                            <li><i class="fas fa-arrow-left"></i> البنائين (المباني)</li>
+                            <li><i class="fas fa-arrow-left"></i> المليسين والبلاطين</li>
+                            <li><i class="fas fa-arrow-left"></i> معلمي الورش</li>
+                            <li><i class="fas fa-arrow-left"></i> فنيي التكييف والتبريد</li>
+                        </ul>
+                        <div class="salary">
+                            <i class="fas fa-money-bill-wave me-2"></i> الرواتب: 2000 - 3000 ريال سعودي
+                        </div>
+                        <div class="notes">
+                            <i class="fas fa-info-circle me-2"></i> تختلف الرواتب حسب الخبرة والمهارة، ويمكن أن تزيد مع التخصص.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- الوظائف المالية -->
+            <div class="col-lg-4 col-md-6 mb-4 category-card" data-category="finance">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-calculator me-2"></i>الوظائف المالية</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="fas fa-calculator category-icon"></i>
+                        </div>
+                        <ul class="job-list">
+                            <li><i class="fas fa-arrow-left"></i> المحاسبين</li>
+                            <li><i class="fas fa-arrow-left"></i> مساعدي المحاسبين</li>
+                            <li><i class="fas fa-arrow-left"></i> مراقبي الحسابات</li>
+                            <li><i class="fas fa-arrow-left"></i> مدققي الحسابات المساعدين</li>
+                        </ul>
+                        <div class="salary">
+                            <i class="fas fa-money-bill-wave me-2"></i> الرواتب: 2000 - 3000 ريال سعودي
+                        </div>
+                        <div class="notes">
+                            <i class="fas fa-info-circle me-2"></i> الرواتب جيدة إذا كان لديهم خبرة، ويمكن أن تزيد مع الشهادات المهنية.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- وظائف البيع والتسويق -->
+            <div class="col-lg-4 col-md-6 mb-4 category-card" data-category="sales">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-shopping-cart me-2"></i>وظائف البيع والتسويق</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="fas fa-shopping-cart category-icon"></i>
+                        </div>
+                        <ul class="job-list">
+                            <li><i class="fas fa-arrow-left"></i> الباعة في المحلات</li>
+                            <li><i class="fas fa-arrow-left"></i> مندوبي المبيعات</li>
+                            <li><i class="fas fa-arrow-left"></i> مسوقين عبر الهاتف</li>
+                            <li><i class="fas fa-arrow-left"></i> مندوبي التسويق الميداني</li>
+                        </ul>
+                        <div class="salary">
+                            <i class="fas fa-money-bill-wave me-2"></i> الرواتب: 2000 - 2500 ريال سعودي
+                        </div>
+                        <div class="notes">
+                            <i class="fas fa-info-circle me-2"></i> غالباً ما تكون هناك عمولات إضافية على المبيعات إلى جانب الراتب الأساسي.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+       
+        
+        <!-- Footer -->
+               <footer class="footer-section text-white pt-5 pb-3" dir="rtl">
+  <div class="container">
+    <div class="row">
+
+      <!-- روابط سريعة -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h5 class="fw-bold mb-3">روابط سريعة</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الوكالة</a></li>
+          <li><a href="service.html">خدماتنا</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+
+      <!-- تواصل معنا -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h5 class="fw-bold mb-3">تواصل معنا</h5>
+        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> صنعاء - اليمن</p>
+        <p class="mb-2"><i class="fas fa-phone me-2"></i> +967 777 000 000</p>
+        <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@alfareed.com</p>
+      </div>
+
+      <!-- أيقونات التواصل -->
+      <div class="col-md-12 col-lg-4 mb-4 text-center">
+        <h5 class="fw-bold mb-3">تابعنا</h5>
+        <div class="social-icons">
+          <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/967777000000" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="bg-light">
+    <div class="text-center small">
+      جميع الحقوق محفوظة © وكالة الفريد 2025
+    </div>
+  </div>
+</footer>
+<script src="js/myjs.js"></script>
+    <!-- Bootstrap & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Filter functionality
+            $('.filter-btn').on('click', function() {
+                // Remove active class from all buttons
+                $('.filter-btn').removeClass('active');
+                // Add active class to clicked button
+                $(this).addClass('active');
+                
+                var filter = $(this).data('filter');
+                
+                if (filter === 'all') {
+                    $('.category-card').fadeIn(500);
+                } else {
+                    $('.category-card').hide();
+                    $('.category-card[data-category="' + filter + '"]').fadeIn(500);
+                }
+            });
+            
+            // Add animation on scroll
+            $(window).scroll(function() {
+                $('.category-card').each(function() {
+                    var position = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    
+                    if (scroll > position - windowHeight + 200) {
+                        $(this).css('opacity', '1');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

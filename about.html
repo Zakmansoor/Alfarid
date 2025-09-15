@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Stocker - Stock Market Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+                <link href="css/mystyle.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+  <style>
+        :root {
+            --primary-color: #184c9c;
+            --secondary-color: #ffc107;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --card-hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            padding-top: 0;
+        }
+        
+        .services-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f8f9fa, #fff);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h1 {
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .section-title h4 {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* تصميم البطاقات المطور */
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: var(--card-shadow);
+            height: 100%;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .service-card-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-card-header img {
+            transform: scale(1.1);
+        }
+        
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover .service-card-overlay {
+            opacity: 1;
+        }
+        
+        .service-card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-card-icon {
+            transform: translateY(0);
+        }
+        
+        .service-card-body {
+            padding: 25px;
+            text-align: right;
+        }
+        
+        .service-card-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-card-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .service-card-text {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .service-card-features {
+            margin-bottom: 25px;
+        }
+        
+        .service-card-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .service-card-feature i {
+            color: var(--secondary-color);
+            margin-left: 10px;
+        }
+        
+        .service-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .service-card-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .service-card-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .service-card-btn:hover {
+            background: var(--secondary-color);
+            color: #333;
+            transform: translateY(-2px);
+        }
+        
+        /* تأثيرات خاصة للبطاقات */
+        .service-card:nth-child(2n) .service-card-icon {
+            background: var(--secondary-color);
+        }
+        
+        .service-card:nth-child(3n) .service-card-title::after {
+            background: #28a745;
+        }
+        
+        .service-card:nth-child(4n) .service-card-btn {
+            background: #dc3545;
+        }
+               .header-carousel {
+        direction: ltr;
+    }
+            /* التنسيق العام */
+            .service-category {
+                margin-bottom: 50px;
+            }
+            
+            .category-title {
+                color: var(--primary-color);
+                font-weight: 700;
+                margin-bottom: 30px;
+                padding-bottom: 15px;
+                border-bottom: 2px solid var(--secondary-color);
+                position: relative;
+            }
+            
+            .category-title::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                right: 0;
+                width: 100px;
+                height: 2px;
+                background: var(--primary-color);
+            }
+            
+            @media (max-width: 768px) {
+                .service-card {
+                    margin-bottom: 20px;
+                }
+                
+                .section-title h1 {
+                    font-size: 2rem;
+                }
+                
+                .service-card-body {
+                    padding: 20px;
+                }
+            }
+    </style>
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+      
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+           <nav class="navbar navbar-expand-lg navbar-light">
+<div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo1_7.png" alt="شعار وكالة الفريد" >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">الرئيسية</a>
+                    <a href="about.html" class="nav-item nav-link active">عن الوكالة</a>
+                    <a href="service.html" class="nav-item nav-link ">خدماتنا</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">صفحات</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html" class="dropdown-item">مميزاتنا</a>
+                            <a href="jobs.html" class="dropdown-item"> معلومات الوظائف</a>
+                            <a href="testimonial.html" class="dropdown-item">آراء العملاء</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">اتصل بنا</a>
+                </div>
+                <a href="#" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">اطلب خدمة</a>
+            </div>
+        </nav>
+
+            <!-- Header Start -->
+            <div class="container-fluid bg-breadcrumb">
+                <div class="container text-center py-5" style="max-width: 900px;">
+                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">وكالتنا </h4>
+                    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                        <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                        <li class="breadcrumb-item"><a href="#">صفحات</a></li>
+                        <li class="breadcrumb-item active text-primary">عنا وكالتنا</li>
+                    </ol>    
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container-fluid about py-5" dir="rtl" style="text-align: right;">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
+                <div>
+                    <h4 class="text-primary">عن وكالتنا</h4>
+                    <h1 class="display-5 mb-4">وكالة الفريد رائدة في مجال التوظيف والخدمات</h1>
+                    <p class="mb-4">
+                        تأسست وكالة الفريد عام 2005، وتخصصت في تقديم خدمات متكاملة تشمل بيع التأشيرات، 
+                        توظيف الأيدي العاملة، تنظيم رحلات الحج والعمرة، والنقل البري. 
+                        نحن نفتخر بسمعتنا الطيبة وثقة عملائنا الكرام.
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                            <div class="d-flex">
+                                <div><i class="fas fa-certificate fa-3x text-primary"></i></div>
+                                <div class="me-4">
+                                    <h4>خدمات معتمدة</h4>
+                                    <p>جميع خدماتنا معتمدة من الجهات الرسمية</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                            <div class="d-flex">
+                                <div><i class="fas fa-users fa-3x text-primary"></i></div>
+                                <div class="me-4">
+                                    <h4>فريق محترف</h4>
+                                    <p>فريق عمل متخصص وذو خبرة عالية</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">اكتشف المزيد</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex">
+                                <i class="fas fa-phone-alt fa-2x text-primary ms-4"></i>
+                                <div>
+                                    <h4>اتصل بنا</h4>
+                                    <p class="mb-0 fs-5" style="letter-spacing: 1px;">96775266242+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
+                <div class="bg-primary rounded position-relative overflow-hidden">
+                    <img src="img/background2.png" class="img-fluid rounded w-100" alt="صورة عن الوكالة">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- About End -->
+
+        <!-- Features Start -->
+      
+        <!-- Features End -->
+
+        <!-- Team Start -->
+       <div class="container-fluid team pb-5">
+  <div class="container pb-5">
+    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+      <h4 class="text-primary">إنجازاتنا</h4>
+      <h1 class="display-5 mb-4">أرقام تتحدث عن نفسها</h1>
+      <p class="mb-0">
+        نفخر بما حققناه من إنجازات على مر السنين، هذه الأرقام تمثل ثقة عملائنا الكرام ونجاح مسيرتنا في تقديم أفضل الخدمات.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- تأشيرة معالجة -->
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+        <div class="team-item">
+          <div class="team-img">
+            <img
+              src="IMG/34.png"
+              class="img-fluid"
+              alt="جواز سفر مع أختام تأشيرة"
+              loading="lazy"
+             
+            >
+          </div>
+          <div class="team-title">
+            <br>
+            <h5 class="mb-3">  خدمة عملاء على مدار الساعة</h5>
+            <p class="mb-0">نوفر دعمًا واستشارات متواصلة 24/7 لضمان راحة عملائنا وسرعة إنجاز طلباتهم</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- عميل سعيد -->
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+        <div class="team-item">
+          <div class="team-img">
+            <img
+              src="IMG/23.png"              class="img-fluid"
+              alt="عميل سعيد يرفع إبهامه"
+              loading="lazy"
+             
+            >
+          </div>
+          <div class="team-title">
+                        <br>
+
+            <h5 class="mb-3">عميل سعيد</h5>
+            <p class="mb-0">أكثر من 2500 عميل راضٍ عن خدماتنا ويثق بنا</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- تأشيرة معالجة (لقطة مختلفة) -->
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+        <div class="team-item">
+          <div class="team-img">
+            <img
+              src="img/2.png"
+              class="img-fluid"
+              alt="موظف يتفحص مستندات تأشيرة"
+              loading="lazy"
+            
+            >
+          </div>
+          <div class="team-title">
+                        <br>
+
+            <h5 class="mb-3">تأشيرة معالجة</h5>
+            <p class="mb-0">تم معالجة أكثر من 5000 تأشيرة بنجاح لعملائنا الكرام</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- سنة من الخبرة -->
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-item">
+          <div class="team-img">
+            <img
+              src="img/3.png"
+              alt="فريق عمل محترف في اجتماع"
+              loading="lazy"
+           
+            >
+          </div>
+          <div class="team-title">
+                        <br>
+
+            <h5 class="mb-3">سنة من الخبرة</h5>
+            <p class="mb-0">خبرة تزيد عن 15 عاماً في تقديم خدمات التأشيرات والتوظيف</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- Footer Start -->
+   
+        
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+            <footer class="footer-section text-white pt-5 pb-3" dir="rtl">
+  <div class="container">
+    <div class="row">
+
+      <!-- روابط سريعة -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h5 class="fw-bold mb-3">روابط سريعة</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الوكالة</a></li>
+          <li><a href="service.html">خدماتنا</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+
+      <!-- تواصل معنا -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <h5 class="fw-bold mb-3">تواصل معنا</h5>
+        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> صنعاء - اليمن</p>
+        <p class="mb-2"><i class="fas fa-phone me-2"></i> +967 777 000 000</p>
+        <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@alfareed.com</p>
+      </div>
+
+      <!-- أيقونات التواصل -->
+      <div class="col-md-12 col-lg-4 mb-4 text-center">
+        <h5 class="fw-bold mb-3">تابعنا</h5>
+        <div class="social-icons">
+          <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/967777000000" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="bg-light">
+    <div class="text-center small">
+      جميع الحقوق محفوظة © وكالة الفريد 2025
+    </div>
+  </div>
+</footer>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
