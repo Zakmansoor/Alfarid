@@ -373,81 +373,6 @@
 
  
         
-<div class="container-fluid partners-section py-5" dir="rtl">
-  <div class="container py-5">
-    <div class="text-center mx-auto pb-5" style="max-width: 800px;">
-      <h4 class="text-primary">آراء العملاء</h4>
-      <h1 class="display-5 mb-4">ماذا يقول عملاؤنا عنا</h1>
-      <p class="mb-0">نسعد دائمًا بسماع تجارب عملائنا ونفخر بثقتهم بخدماتنا.</p>
-    </div>
-
-    <!-- شريط الفيديوهات -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-
-        <!-- رأي عميل 1 -->
-        <div class="swiper-slide">
-          <div class="card video-card">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <p class="card-text">"خدمة رائعة وسرعة في الإنجاز، أنصح الجميع بالتعامل معهم."</p>
-              <small class="text-muted">— أحمد علي</small>
-            </div>
-          </div>
-        </div>
-
-        <!-- رأي عميل 2 -->
-        <div class="swiper-slide">
-          <div class="card video-card">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <p class="card-text">"تجربة ممتازة وفريق عمل محترف."</p>
-              <small class="text-muted">— سارة محمد</small>
-            </div>
-          </div>
-        </div>
-
-        <!-- رأي عميل 3 -->
-        <div class="swiper-slide">
-          <div class="card video-card">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <p class="card-text">"التزام بالمواعيد وجودة في الخدمة."</p>
-              <small class="text-muted">— خالد يوسف</small>
-            </div>
-          </div>
-        </div>
-
-        <!-- رأي عميل 4 -->
-        <div class="swiper-slide">
-          <div class="card video-card">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body text-center">
-              <p class="card-text">"أفضل وكالة تعاملت معها على الإطلاق."</p>
-              <small class="text-muted">— منى عبد الله</small>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- النقاط -->
-      <div class="swiper-pagination"></div>
-
-      <!-- أسهم التنقل -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -519,29 +444,7 @@
                 }
             });
         </script>
-        <script>
-document.querySelectorAll('.btn-light').forEach(button => {
-  button.addEventListener('click', function(e) {
-    e.preventDefault();
-    let videoUrl = "https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=1";
-    document.getElementById('popupVideo').src = videoUrl;
-    document.getElementById('videoPopup').style.display = 'flex';
-  });
-});
-
-document.getElementById('closePopup').addEventListener('click', function() {
-  document.getElementById('videoPopup').style.display = 'none';
-  document.getElementById('popupVideo').src = "";
-});
-
-window.addEventListener('click', function(e) {
-  if (e.target === document.getElementById('videoPopup')) {
-    document.getElementById('videoPopup').style.display = 'none';
-    document.getElementById('popupVideo').src = "";
-  }
-});
-</script>
-
+      
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
