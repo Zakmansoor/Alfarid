@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
     <head>
         <meta charset="utf-8">
@@ -9,7 +9,7 @@
         <meta content="" name="description">
 
         <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
 
@@ -23,101 +23,296 @@
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
+
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/mystyle.css" rel="stylesheet">
+        
+        <style>
+            /* Video player styles */
+            .video-container {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                overflow: hidden;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+            
+            .video-thumbnail {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            
+            .video-container:hover .video-thumbnail {
+                transform: scale(1.05);
+            }
+            
+            .play-button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 60px;
+                height: 60px;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+            
+            .play-button i {
+                color: #fd7e14;
+                font-size: 24px;
+                margin-left: 4px;
+            }
+            
+            .video-container:hover .play-button {
+                background-color: #fd7e14
+            }
+            
+            .video-container:hover .play-button i {
+                color: white;
+            }
+            
+            .video-iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: none;
+            }
+            
+            /* Grid layout for testimonials */
+            .testimonial-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 30px;
+                margin-top: 50px;
+            }
+            
+            .testimonial-grid-item {
+                background: white;
+                border-radius: 12px;
+                padding: 25px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .testimonial-grid-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            }
+            
+            .testimonial-content {
+                flex: 1;
+            }
+            
+            .testimonial-quote {
+                color: #fd7e14;
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            
+            .testimonial-text p {
+                color: #555;
+                font-style: italic;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+            
+            .testimonial-author {
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+            }
+            
+            .testimonial-author img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 15px;
+                border: 3px solid #f0f0f0;
+            }
+            
+            .author-info h4 {
+                margin: 0;
+                font-weight: 600;
+                color: #333;
+            }
+            
+            .author-info p {
+                margin: 5px 0 0;
+                color: #777;
+                font-size: 14px;
+            }
+            
+            .testimonial-rating {
+                color: #ffc107;
+                margin: 10px 0;
+            }
+            
+            /* Footer styles */
+            
+             .author-info h4 {
+                margin: 0;
+                font-weight: 600;
+                color: #333;
+            }
+            
+            .author-info p {
+                margin: 5px 0 0;
+                color: #777;
+                font-size: 14px;
+            }
+            
+            .testimonial-rating {
+                color: #ffc107;
+                margin: 10px 0;
+            }
+            
+            /* Pagination styles */
+            .pagination-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+            }
+            
+            .pagination {
+                display: flex;
+                padding-left: 0;
+                list-style: none;
+                border-radius: 0.375rem;
+            }
+            
+            .page-item {
+                margin: 0 5px;
+            }
+            
+            .page-link {
+                position: relative;
+                display: block;
+                padding: 0.5rem 0.75rem;
+                color: var(--primary-color);
+                background-color: #fff;
+                border: 1px solid #dee2e6;
+                border-radius: 0.375rem;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+            
+            .page-link:hover {
+                z-index: 2;
+                color: #fff;
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+            }
+            
+            .page-item.active .page-link {
+                z-index: 3;
+                color: #fff;
+                background-color: #f78222;
+                border-color: #fd7e14;
+            }
+            
+            .page-item.disabled .page-link {
+                color: #6c757d;
+                pointer-events: none;
+                background-color: #fff;
+                border-color: #dee2e6;
+            }
+            
+            /* Header and navigation styles */
+            .navbar-brand h1 {
+                font-weight: 800;
+            }
+            
+            .nav-item {
+                font-weight: 500;
+            }
+            
+            .bg-breadcrumb {
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+                background-size: cover;
+                background-position: center;
+                padding: 80px 0;
+            }
+            
+        </style>
     </head>
 
     <body>
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show bg-white position-fixed top-0 start-0 w-100 vh-100 
+            d-flex align-items-center justify-content-center">
+  <div class="spinner-border text-primary" 
+       style="width: 3rem; height: 3rem;" 
+       role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<!-- Spinner End -->
+
         <!-- Spinner End -->
 
         <!-- Topbar Start -->
-        <div class="container-fluid topbar bg-light px-5 d-none d-lg-block">
-            <div class="row gx-0 align-items-center">
-                <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                    <div class="d-flex flex-wrap">
-                        <a href="#" class="text-muted small me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                        <a href="tel:+01234567890" class="text-muted small me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                        <a href="mailto:example@gmail.com" class="text-muted small me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end">
-                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a href="#"><small class="me-3 text-dark"><i class="fa fa-user text-primary me-2"></i>Register</small></a>
-                        <a href="#"><small class="me-3 text-dark"><i class="fa fa-sign-in-alt text-primary me-2"></i>Login</small></a>
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fa fa-home text-primary me-2"></i> My Dashboard</small></a>
-                            <div class="dropdown-menu rounded">
-                                <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-power-off me-2"></i> Log Out</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
         <!-- Topbar End -->
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
-                    <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <a href="blog.html" class="nav-item nav-link">Blogs</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link active" data-bs-toggle="dropdown">
-                                <span class="dropdown-toggle">Pages</span>
-                            </a>
-                            <div class="dropdown-menu m-0">
-                                <a href="feature.html" class="dropdown-item">Our Features</a>
-                                <a href="team.html" class="dropdown-item">Our team</a>
-                                <a href="testimonial.html" class="dropdown-item active">Testimonial</a>
-                                <a href="offer.html" class="dropdown-item">Our offer</a>
-                                <a href="FAQ.html" class="dropdown-item">FAQs</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
+           <nav class="navbar navbar-expand-lg navbar-light">
+<div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo1_7.png" alt="شعار وكالة الفريد" >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">الرئيسية</a>
+                    <a href="about.html" class="nav-item nav-link active">عن الوكالة</a>
+                    <a href="service.html" class="nav-item nav-link ">خدماتنا</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">صفحات</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html" class="dropdown-item">مميزاتنا</a>
+                            <a href="jobs.html" class="dropdown-item"> معلومات الوظائف</a>
+                            <a href="testimonial.html" class="dropdown-item">آراء العملاء</a>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                     </div>
-                    <a href="#" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Get Started</a>
+                    <a href="contact.html" class="nav-item nav-link">اتصل بنا</a>
                 </div>
-            </nav>
+                <a href="#" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">اطلب خدمة</a>
+            </div>
+        </nav>
 
             <!-- Header Start -->
             <div class="container-fluid bg-breadcrumb">
                 <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Testimonial</h4>
+                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">آراء العملاء  </h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item active text-primary">Testimonial</li>
+                        <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                        <li class="breadcrumb-item"><a href="#">صفحات</a></li>
+                        <li class="breadcrumb-item active text-primary">آراء العملاء </li>
                     </ol>    
                 </div>
             </div>
-            <!-- Header End -->
         </div>
+          
+     
         <!-- Navbar & Hero End -->
 
 
@@ -125,36 +320,33 @@
         <div class="container-fluid testimonial py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Testimonial</h4>
-                    <h1 class="display-5 mb-4">Our Clients Riviews</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
+                    <h4 class="text-primary"> فيديوهات عملائنا 
+</h4>
+                    <h1 class="display-5 mb-4">أصوات من الميدان تروي تجربتهم مع وكالة الفريد
+</h1>
+                    <p class="mb-0">في هذا القسم، نشارككم لحظات نجاح عملائنا الذين حصلوا على فرص عمل مميزة في السعودية من خلال خدماتنا. شاهدوا بنفسكم كيف غيرنا حياتهم!
+
+</p>
                 </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-1.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-<div class="testimonial-text">
-    <iframe width="100%" height="200"
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-</div>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
+                
+                <div class="testimonial-grid" id="testimonialGrid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-grid-item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
                             </div>
-                            <div class="d-flex text-primary">
+                            <div class="testimonial-text">
+                                <p>Stocker has completely transformed how I manage my investments. Their insights helped me grow my portfolio by 35% in just one year!</p>
+                            </div>
+                            <div class="video-container" data-video-id="lxTeCvcxmxA">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/lxTeCvcxmxA/mqdefault.jpg" alt="Video Thumbnail">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <iframe class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="testimonial-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -162,35 +354,32 @@
                                 <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
+                        <div class="testimonial-author">
+                            <img src="img/testimonial-1.jpg" alt="Sarah Johnson">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Financial Analyst</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/1.png" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-<div class="testimonial-text">
-    <iframe width="100%" height="200"
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-</div>
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-grid-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
                             </div>
-                            <div class="d-flex text-primary">
+                            <div class="testimonial-text">
+                                <p>The market predictions and analysis from Stocker are incredibly accurate. I've avoided several bad investments thanks to their advice.</p>
+                            </div>
+                            <div class="video-container" data-video-id="Vlj7ejvs3cs">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/Vlj7ejvs3cs/mqdefault.jpg" alt="Video Thumbnail">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <iframe class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="testimonial-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -198,72 +387,65 @@
                                 <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
+                        <div class="testimonial-author">
+                            <img src="img/1.png" alt="Michael Chen">
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Investment Banker</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-3.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-<div class="testimonial-text">
-    <iframe width="100%" height="200"
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        title="YouTube video player"
-        frameborder="0"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-</div>
-
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-grid-item wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
                             </div>
-                            <div class="d-flex text-primary">
+                            <div class="testimonial-text">
+                                <p>As a beginner in stock trading, Stocker's educational resources and guidance have been invaluable. I'm now confidently making my own investment decisions.</p>
+                            </div>
+                            <div class="video-container" data-video-id="XeO6ylj7Z9U">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/XeO6ylj7Z9U/mqdefault.jpg" alt="Video Thumbnail">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <iframe class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="testimonial-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
                             </div>
                         </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
+                        <div class="testimonial-author">
+                            <img src="img/testimonial-3.jpg" alt="Emma Rodriguez">
+                            <div class="author-info">
+                                <h4>Emma Rodriguez</h4>
+                                <p>Small Business Owner</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-<div class="testimonial-text">
-    <iframe width="100%" height="200"
-        src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&playsinline=1&loop=1&playlist=VIDEO_ID&controls=0&modestbranding=1&rel=0"
-        title="YouTube video player"
-        frameborder="0"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-</div>
-    
-
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-grid-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
                             </div>
-                            <div class="d-flex text-primary">
+                            <div class="testimonial-text">
+                                <p>Their customer service is exceptional. Whenever I have questions, the support team is quick to respond with helpful, detailed answers.</p>
+                            </div>
+                            <div class="video-container" data-video-id="4xGRC3eeo88">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/4xGRC3eeo88/mqdefault.jpg" alt="Video Thumbnail">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <iframe class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="testimonial-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -271,16 +453,95 @@
                                 <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
+                        <div class="testimonial-author">
+                            <img src="img/testimonial-2.jpg" alt="David Kim">
+                            <div class="author-info">
+                                <h4>David Kim</h4>
+                                <p>Portfolio Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-grid-item wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>I've tried several stock analysis platforms, but Stocker's intuitive interface and powerful tools make it stand out from the competition.</p>
+                            </div>
+                            <div class="video-container" data-video-id="dQw4w9WgXcQ">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="Video Thumbnail">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <iframe class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Wilson">
+                            <div class="author-info">
+                                <h4>James Wilson</h4>
+                                <p>Retired Investor</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-grid-item wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>The real-time alerts and personalized recommendations have helped me capitalize on opportunities I would have otherwise missed.</p>
+                            </div>
+                            <div class="video-container" data-video-id="jNQXAC9IVRw">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/jNQXAC9IVRw/mqdefault.jpg" alt="Video Thumbnail">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <iframe class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Lisa Taylor">
+                            <div class="author-info">
+                                <h4>Lisa Taylor</h4>
+                                <p>Financial Advisor</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+          <div class="pagination-container">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination" id="pagination">
+                            <!-- سيتم إضافة أزرار الترقيم هنا عبر JavaScript -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
         <!-- Testimonial End -->
 
-               <footer class="footer-section text-white pt-5 pb-3" dir="rtl">
+                 <footer class="footer-section text-white pt-5 pb-3" dir="rtl">
   <div class="container">
     <div class="row">
 
@@ -322,14 +583,13 @@
   </div>
 </footer>
 
+        
         <!-- Copyright End -->
-
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
         
-        <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="lib/wow/wow.min.js"></script>
@@ -338,10 +598,283 @@
         <script src="lib/counterup/counterup.min.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
 
-        <!-- Template Javascript -->
+        <script src="js/myjs.js"></script>
         <script src="js/main.js"></script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add click event to all video containers
+                const videoContainers = document.querySelectorAll('.video-container');
+                
+                videoContainers.forEach(container => {
+                    container.addEventListener('click', function() {
+                        const videoId = this.getAttribute('data-video-id');
+                        const iframe = this.querySelector('.video-iframe');
+                        const thumbnail = this.querySelector('.video-thumbnail');
+                        const playButton = this.querySelector('.play-button');
+                        
+                        // Hide thumbnail and play button
+                        thumbnail.style.display = 'none';
+                        playButton.style.display = 'none';
+                        
+                        // Set video source and display it
+                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                        iframe.style.display = 'block';
+                    });
+                });
+            });
+        </script>
+           <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // بيانات آراء العملاء
+                const testimonials = [
+                    {
+                        name: "سارة أحمد",
+                        position: "محللة مالية",
+                        text: "لقد غير Stocker طريقة إدارة استثماراتي بالكامل. ساعدتني رؤاهم على نمو محفظتي بنسبة 35٪ في عام واحد فقط!",
+                        image: "https://randomuser.me/api/portraits/women/65.jpg",
+                        videoId: "lxTeCvcxmxA",
+                        rating: 5
+                    },
+                    {
+                        name: "محمد الخالد",
+                        position: "مصرفي استثماري",
+                        text: "توقعات السوق والتحليلات من Stocker دقيقة بشكل لا يصدق. لقد تجنبت عدة استثمارات سيئة بفضل نصائحهم.",
+                        image: "https://randomuser.me/api/portraits/men/32.jpg",
+                        videoId: "Vlj7ejvs3cs",
+                        rating: 5
+                    },
+                    {
+                        name: "فاطمة السعدي",
+                        position: "صاحبة عمل صغير",
+                        text: "كمبتدئ في تداول الأسهم، كانت الموارد التعليمية والتوجيه من Stocker لا تقدر بثمن. أنا الآن أتخذ قرارات الاستثمار الخاصة بي بثقة.",
+                        image: "https://randomuser.me/api/portraits/women/44.jpg",
+                        videoId: "XeO6ylj7Z9U",
+                        rating: 4.5
+                    },
+                    {
+                        name: "خالد المري",
+                        position: "مدير محفظة",
+                        text: "خدمة العملاء لديهم استثنائية. عندما يكون لدي أسئلة، فإن فريق الدعم يرد بسرعة بإجابات مفيدة ومفصلة.",
+                        image: "https://randomuser.me/api/portraits/men/75.jpg",
+                        videoId: "4xGRC3eeo88",
+                        rating: 5
+                    },
+                    {
+                        name: "سعيد الغامدي",
+                        position: "مستثمر متقاعد",
+                        text: "لقد جربت عدة منصات لتحليل الأسهم، ولكن واجهة Stocker البديهية وأدواتها القوية تجعلها تبرز من بين المنافسة.",
+                        image: "https://randomuser.me/api/portraits/men/32.jpg",
+                        videoId: "dQw4w9WgXcQ",
+                        rating: 4
+                    },
+                    {
+                        name: "نورة الفهد",
+                        position: "مستشارة مالية",
+                        text: "ساعدتني التنبيهات الفورية والتوصيات الشخصية في الاستفادة من الفرص التي كنت سأفوتها لولا ذلك.",
+                        image: "https://randomuser.me/api/portraits/women/44.jpg",
+                        videoId: "jNQXAC9IVRw",
+                        rating: 5
+                    },
+                    {
+                        name: "أحمد السليم",
+                        position: "مستشار استثماري",
+                        text: "منصة Stocker ساعدتني في تحسين أداء محفظتي الاستثمارية بشكل ملحوظ خلال فترة قصيرة.",
+                        image: "https://randomuser.me/api/portraits/men/22.jpg",
+                        videoId: "abc123",
+                        rating: 4.5
+                    },
+                    {
+                        name: "لمى العتيبي",
+                        position: "محللة أسواق",
+                        text: "الدقة في التحليلات والتنبؤات جعلتني أثق تمامًا في نصائح Stocker لاستثماراتي.",
+                        image: "https://randomuser.me/api/portraits/women/33.jpg",
+                        videoId: "def456",
+                        rating: 5
+                    },
+                    {
+                        name: "ياسر القحطاني",
+                        position: "رجل أعمال",
+                        text: "باستخدام Stocker، تمكنت من توسيع محفظتي الاستثمارية وتنويعها بشكل آمن ومربح.",
+                        image: "https://randomuser.me/api/portraits/men/55.jpg",
+                        videoId: "ghi789",
+                        rating: 4
+                    },
+                    {
+                        name: "هند الشمري",
+                        position: "مستثمرة",
+                        text: "واجهة المستخدم البسيطة والأدوات المتقدمة جعلت تجربتي مع Stocker استثنائية.",
+                        image: "https://randomuser.me/api/portraits/women/66.jpg",
+                        videoId: "jkl012",
+                        rating: 5
+                    },
+                    {
+                        name: "فهد الراشد",
+                        position: "مدير صندوق استثماري",
+                        text: "التحليلات المتعمقة والتقارير الدورية ساعدتني في اتخاذ قرارات استثمارية أكثر ذكاءً.",
+                        image: "https://randomuser.me/api/portraits/men/77.jpg",
+                        videoId: "mno345",
+                        rating: 4.5
+                    },
+                    {
+                        name: "أميرة السديس",
+                        position: "خبيرة اقتصادية",
+                        text: "بفضل Stocker، أصبحت أكثر قدرة على فهم تحركات السوق واتجاهات الاستثمار.",
+                        image: "https://randomuser.me/api/portraits/women/88.jpg",
+                        videoId: "pqr678",
+                        rating: 5
+                    }
+                ];
+
+                // إعدادات الترقيم
+                const itemsPerPage = 6;
+                let currentPage = 1;
+                const totalPages = Math.ceil(testimonials.length / itemsPerPage);
+
+                // عرض آراء العملاء بناءً على الصفحة الحالية
+                function displayTestimonials(page) {
+                    const grid = document.getElementById('testimonialGrid');
+                    grid.innerHTML = '';
+                    
+                    const startIndex = (page - 1) * itemsPerPage;
+                    const endIndex = startIndex + itemsPerPage;
+                    const pageTestimonials = testimonials.slice(startIndex, endIndex);
+                    
+                    pageTestimonials.forEach(testimonial => {
+                        const ratingStars = generateRatingStars(testimonial.rating);
+                        
+                        const testimonialItem = document.createElement('div');
+                        testimonialItem.className = 'testimonial-grid-item';
+                        testimonialItem.innerHTML = `
+                            <div class="testimonial-content">
+                                <div class="testimonial-quote">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>${testimonial.text}</p>
+                                </div>
+                                <div class="video-container" data-video-id="${testimonial.videoId}">
+                                    <img class="video-thumbnail" src="https://img.youtube.com/vi/${testimonial.videoId}/mqdefault.jpg" alt="معاينة الفيديو">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                    <iframe class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="testimonial-rating">
+                                    ${ratingStars}
+                                </div>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="${testimonial.image}" alt="${testimonial.name}">
+                                <div class="author-info">
+                                    <h4>${testimonial.name}</h4>
+                                    <p>${testimonial.position}</p>
+                                </div>
+                            </div>
+                        `;
+                        
+                        grid.appendChild(testimonialItem);
+                    });
+                    
+                    // إضافة أحداث النقر لمشغلات الفيديو
+                    addVideoEvents();
+                }
+                
+                // إنشاء نجوم التقييم
+                function generateRatingStars(rating) {
+                    let stars = '';
+                    const fullStars = Math.floor(rating);
+                    const hasHalfStar = rating % 1 !== 0;
+                    
+                    for (let i = 0; i < fullStars; i++) {
+                        stars += '<i class="fas fa-star"></i>';
+                    }
+                    
+                    if (hasHalfStar) {
+                        stars += '<i class="fas fa-star-half-alt"></i>';
+                    }
+                    
+                    const emptyStars = 5 - Math.ceil(rating);
+                    for (let i = 0; i < emptyStars; i++) {
+                        stars += '<i class="far fa-star"></i>';
+                    }
+                    
+                    return stars;
+                }
+                
+                // إنشاء أزرار الترقيم
+                function setupPagination() {
+                    const pagination = document.getElementById('pagination');
+                    pagination.innerHTML = '';
+                    
+                    // زر الصفحة السابقة
+                    const prevItem = document.createElement('li');
+                    prevItem.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+                    prevItem.innerHTML = `<a class="page-link" href="#" data-page="${currentPage - 1}">السابق</a>`;
+                    pagination.appendChild(prevItem);
+                    
+                    // أزرار الصفحات
+                    for (let i = 1; i <= totalPages; i++) {
+                        const pageItem = document.createElement('li');
+                        pageItem.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                        pageItem.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+                        pagination.appendChild(pageItem);
+                    }
+                    
+                    // زر الصفحة التالية
+                    const nextItem = document.createElement('li');
+                    nextItem.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+                    nextItem.innerHTML = `<a class="page-link" href="#" data-page="${currentPage + 1}">التالي</a>`;
+                    pagination.appendChild(nextItem);
+                    
+                    // إضافة أحداث النقر لأزرار الترقيم
+                    pagination.querySelectorAll('.page-link').forEach(link => {
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const page = parseInt(this.getAttribute('data-page'));
+                            if (page && page !== currentPage) {
+                                currentPage = page;
+                                displayTestimonials(currentPage);
+                                setupPagination();
+                                window.scrollTo({ top: 600, behavior: 'smooth' });
+                            }
+                        });
+                    });
+                }
+                
+                // إضافة أحداث النقر لمشغلات الفيديو
+                function addVideoEvents() {
+                    const videoContainers = document.querySelectorAll('.video-container');
+                    
+                    videoContainers.forEach(container => {
+                        container.addEventListener('click', function() {
+                            const videoId = this.getAttribute('data-video-id');
+                            const iframe = this.querySelector('.video-iframe');
+                            const thumbnail = this.querySelector('.video-thumbnail');
+                            const playButton = this.querySelector('.play-button');
+                            
+                            // إخفاء الصورة المصغرة وزر التشغيل
+                            thumbnail.style.display = 'none';
+                            playButton.style.display = 'none';
+                            
+                            // تعيين مصدر الفيديو وعرضه
+                            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                            iframe.style.display = 'block';
+                        });
+                    });
+                }
+                
+                // تهيئة الصفحة
+                displayTestimonials(currentPage);
+                setupPagination();
+                
+                // إخفاء spinner بعد تحميل الصفحة
+                setTimeout(() => {
+                    document.getElementById('spinner').classList.remove('show');
+                }, 500);
+            });
+        </script>
         
     </body>
 
