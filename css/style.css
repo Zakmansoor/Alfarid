@@ -208,6 +208,8 @@
 
     .navbar.navbar-expand-lg .navbar-toggler {
         padding: 10px 20px;
+                margin-right: 90px;
+
         border: 1px solid var(--bs-primary);
         color: var(--bs-primary);
                     font-family: 'Cairo', sans-serif;
