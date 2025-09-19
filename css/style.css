@@ -325,6 +325,7 @@
 
 
 
+
 .header-carousel .header-carousel-item .carousel-caption {
     position: absolute;
     width: 100%;
@@ -342,6 +343,8 @@
         padding-top: 45px;
     }
 }
+
+
 
 
 .header-carousel .header-carousel-item img {
@@ -984,13 +987,7 @@
                 height: 400px;
             }
             
-            .header-carousel .owl-nav .owl-prev,
-            .header-carousel .owl-nav .owl-next {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
-            
+           
             
             
             .bg-breadcrumb {
