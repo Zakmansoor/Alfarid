@@ -476,7 +476,7 @@
                                 <p>Stocker has completely transformed how I manage my investments. Their insights helped me grow my portfolio by 35% in just one year!</p>
                             </div>
                             <div class="video-container" data-video-id="lxTeCvcxmxA">
-                                <img class="video-thumbnail" src="https://img.youtube.com/vi/lxTeCvcxmxA/mqdefault.jpg" alt="Video Thumbnail">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/_jPkmXeD6Sg/mqdefault.jpg" alt="Video Thumbnail">
                                 <div class="play-button">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -509,7 +509,7 @@
                                 <p>The market predictions and analysis from Stocker are incredibly accurate. I've avoided several bad investments thanks to their advice.</p>
                             </div>
                             <div class="video-container" data-video-id="Vlj7ejvs3cs">
-                                <img class="video-thumbnail" src="https://img.youtube.com/vi/Vlj7ejvs3cs/mqdefault.jpg" alt="Video Thumbnail">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/slHvEsQZZrU/mqdefault.jpg" alt="Video Thumbnail">
                                 <div class="play-button">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -542,8 +542,7 @@
                                 <p>As a beginner in stock trading, Stocker's educational resources and guidance have been invaluable. I'm now confidently making my own investment decisions.</p>
                             </div>
                             <div class="video-container" data-video-id="XeO6ylj7Z9U">
-                                <img class="video-thumbnail" src="https://img.youtube.com/vi/slHvEsQZZrU/mqdefault.jpg" alt="YouTube Thumbnail">
-
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/RKunp6_YcAI/mqdefault.jpg" alt="Video Thumbnail">
                                 <div class="play-button">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -738,67 +737,61 @@
 
         <script src="js/myjs.js"></script>
         <script src="js/main.js"></script>
-      <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const videoContainers = document.querySelectorAll('.video-container');
-    
-    videoContainers.forEach(container => {
-        container.addEventListener('click', function() {
-            const videoId = this.getAttribute('data-video-id');
-            const isShort = this.getAttribute('data-type') === 'short'; // نحدد النوع من الـ HTML
-            const iframe = this.querySelector('.video-iframe');
-            const thumbnail = this.querySelector('.video-thumbnail');
-            const playButton = this.querySelector('.play-button');
-            
-            // إخفاء الصورة وزر التشغيل
-            thumbnail.style.display = 'none';
-            playButton.style.display = 'none';
-            
-            // تحديد رابط الفيديو حسب النوع
-            if (isShort) {
-                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-            } else {
-                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-            }
-            
-            iframe.style.display = 'block';
-        });
-    });
-});
-</script>
-
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add click event to all video containers
+                const videoContainers = document.querySelectorAll('.video-container');
+                
+                videoContainers.forEach(container => {
+                    container.addEventListener('click', function() {
+                        const videoId = this.getAttribute('data-video-id');
+                        const iframe = this.querySelector('.video-iframe');
+                        const thumbnail = this.querySelector('.video-thumbnail');
+                        const playButton = this.querySelector('.play-button');
+                        
+                        // Hide thumbnail and play button
+                        thumbnail.style.display = 'none';
+                        playButton.style.display = 'none';
+                        
+                        // Set video source and display it
+                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                        iframe.style.display = 'block';
+                    });
+                });
+            });
+        </script>
            <script>
             document.addEventListener('DOMContentLoaded', function() {
                 // بيانات آراء العملاء
                 const testimonials = [
                     {
-                        name: "علي أحمد",
-                        position: "محللة مالية",
+                        name: "عامر أحمد",
+                        position: "  معلم بيتزا",
                         text: "لقد غير Stocker طريقة إدارة استثماراتي بالكامل. ساعدتني رؤاهم على نمو محفظتي بنسبة 35٪ في عام واحد فقط!",
-                        image: "https://randomuser.me/api/portraits/women/65.jpg",
-                        videoId: "RKunp6_YcAI",
+                        image: "https://img.youtube.com/vi/_jPkmXeD6Sg/mqdefault.jpg",
+                        videoId: "_jPkmXeD6Sg",
                         rating: 5
                     },
                     {
                         name: "محمد الخالد",
                         position: "مصرفي استثماري",
                         text: "توقعات السوق والتحليلات من Stocker دقيقة بشكل لا يصدق. لقد تجنبت عدة استثمارات سيئة بفضل نصائحهم.",
-                        image: "https://randomuser.me/api/portraits/men/32.jpg",
+                        image: "https://img.youtube.com/vi/slHvEsQZZrU/mqdefault.jpg",
                         videoId: "slHvEsQZZrU",
                         rating: 5
                     },
                     {
-                        name: "احمد السعدي",
-                        position: "صاحبة عمل صغير",
+                        name: "فاطمة السعدي",
+                        position: " طباخة مالكة لمطعم",
                         text: "كمبتدئ في تداول الأسهم، كانت الموارد التعليمية والتوجيه من Stocker لا تقدر بثمن. أنا الآن أتخذ قرارات الاستثمار الخاصة بي بثقة.",
-                        image: "https://randomuser.me/api/portraits/women/44.jpg",
-                        videoId: "_jPkmXeD6Sg
-",
+                        image: "https://img.youtube.com/vi/RKunp6_YcAI/mqdefault.jpg",
+                        videoId: "RKunp6_YcAI",
                         rating: 4.5
                     },
                     {
                         name: "خالد المري",
-                        position: "مدير محفظة",
+                        position: " سواق",
                         text: "خدمة العملاء لديهم استثنائية. عندما يكون لدي أسئلة، فإن فريق الدعم يرد بسرعة بإجابات مفيدة ومفصلة.",
                         image: "https://randomuser.me/api/portraits/men/75.jpg",
                         videoId: "4xGRC3eeo88",
