@@ -542,7 +542,8 @@
                                 <p>As a beginner in stock trading, Stocker's educational resources and guidance have been invaluable. I'm now confidently making my own investment decisions.</p>
                             </div>
                             <div class="video-container" data-video-id="XeO6ylj7Z9U">
-                                <img class="video-thumbnail" src="https://img.youtube.com/vi/XeO6ylj7Z9U/mqdefault.jpg" alt="Video Thumbnail">
+                                <img class="video-thumbnail" src="https://img.youtube.com/vi/slHvEsQZZrU/mqdefault.jpg" alt="YouTube Thumbnail">
+
                                 <div class="play-button">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -737,30 +738,35 @@
 
         <script src="js/myjs.js"></script>
         <script src="js/main.js"></script>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Add click event to all video containers
-                const videoContainers = document.querySelectorAll('.video-container');
-                
-                videoContainers.forEach(container => {
-                    container.addEventListener('click', function() {
-                        const videoId = this.getAttribute('data-video-id');
-                        const iframe = this.querySelector('.video-iframe');
-                        const thumbnail = this.querySelector('.video-thumbnail');
-                        const playButton = this.querySelector('.play-button');
-                        
-                        // Hide thumbnail and play button
-                        thumbnail.style.display = 'none';
-                        playButton.style.display = 'none';
-                        
-                        // Set video source and display it
-                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-                        iframe.style.display = 'block';
-                    });
-                });
-            });
-        </script>
+      <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const videoContainers = document.querySelectorAll('.video-container');
+    
+    videoContainers.forEach(container => {
+        container.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            const isShort = this.getAttribute('data-type') === 'short'; // نحدد النوع من الـ HTML
+            const iframe = this.querySelector('.video-iframe');
+            const thumbnail = this.querySelector('.video-thumbnail');
+            const playButton = this.querySelector('.play-button');
+            
+            // إخفاء الصورة وزر التشغيل
+            thumbnail.style.display = 'none';
+            playButton.style.display = 'none';
+            
+            // تحديد رابط الفيديو حسب النوع
+            if (isShort) {
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+            } else {
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            }
+            
+            iframe.style.display = 'block';
+        });
+    });
+});
+</script>
+
            <script>
             document.addEventListener('DOMContentLoaded', function() {
                 // بيانات آراء العملاء
