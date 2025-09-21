@@ -1008,7 +1008,8 @@
     }
     
     .header-carousel .header-carousel-item .carousel-caption {
-        padding-top: 50px;
+         padding-top: 60px;
+        margin-top:60px ;
     }
     
     .navbar-light .navbar-brand img {
